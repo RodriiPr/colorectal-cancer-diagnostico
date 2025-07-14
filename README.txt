@@ -1,47 +1,95 @@
-En este repositorio se presenta el código utilizado para la elaboración del trabajo de evaluación de imágenes de células cancerígenas colorectal:
+# Deep Learning para la detección de cáncer colorrectal y análisis de imágenes histopatológicas
 
-Título: Deep Learning para la detección de cáncer colorrectal y análisis de imágenes histopatológicas
+![Banner de Cáncer Colorrectal](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Deep+Learning+para+detección+de+cáncer+colorrectal)
 
-Autores:
+Proyecto de investigación que implementa modelos de Deep Learning para el análisis automatizado de imágenes histopatológicas de cáncer colorrectal, permitiendo la clasificación precisa de tejidos cancerosos mediante redes neuronales convolucionales.
 
-Albarrán Jara Carlos Fernando.
-Montenegro Baca Zee Ricardo.
-Rodriguez Preciado André Jhonel. 
+## Tabla de Contenidos
+- [Autores](#autores)
+- [Características Técnicas](#características-técnicas)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Dataset](#dataset)
+- [Resultados](#resultados)
+- [Referencias](#referencias)
+- [Licencia](#licencia)
 
-Directores: Juan Pedro Santos Fernández
+## Autores
+- **Albarrán Jara Carlos Fernando** - Investigador Principal
+- **Montenegro Baca Zee Ricardo** - Especialista en Modelos DL
+- **Rodriguez Preciado André Jhonel** - Ingeniero de Datos
 
-Departamento: Ingeniería de Sistemas 
+**Director**: Dr. Juan Pedro Santos Fernández  
+**Departamento**: Ingeniería de Sistemas  
+**Universidad**: Universidad Nacional de Trujillo (UNT)  
+**Convocatoria**: Julio 2025
 
-Universidad: Universidad Nacional de Trujillo (UNT)
+## Características Técnicas
+### Hardware
+- **GPU**: Nvidia GeForce RTX 2060 6GB GDDR6
+- **CPU**: Intel Core i7-9750H (12MB Cache, up to 4.5GHz)
+- **RAM**: 16GB DDR4 2666MHz
+- **Almacenamiento**: SSD NVMe 1TB
 
-Convocatoria: Julio 2025
+### Software
+- **Sistema Operativo**: Windows 10 Pro 64-bit (Build 19045)
+- **Python**: 3.8.10
+- **Entorno**: Docker 24.0.5
+- **CUDA**: 11.7
+- **cuDNN**: 8.5.0
+
+## Requisitos
+Principales dependencias:
+```bash
+torch==2.0.1
+torchvision==0.15.2
+opencv-python==4.7.0.72
+numpy==1.24.3
+matplotlib==3.7.1
+scikit-learn==1.2.2
+pandas==2.0.2
 
 
-Características técnicas:
-Nvidia GeForce RTX 2060 6GB
+Dataset
+Nombre: NCT-CRC-HE-100K
 
-Intel Core i7-9759H 2.60GHz
+Origen: National Center for Tumor Diseases (NCT), Alemania
 
-RAM 16GB
+Características:
 
-SSD 1TB
+100,000 imágenes de tejido colorrectal
 
-Windows 10 sistema 64bits
+Resolución: 224×224 píxeles (0.5 µm/px)
 
-Python 3.8
+9 clases histológicas:
 
-Docker (para contenerizar la aplicación)
+Tumor (TUM)
 
-Bibliotecas principales: PyTorch, OpenCV, NumPy, Matplotlib, Scikit-learn
+Estroma (STR)
 
-Primer paso: Crear el entorno con Docker
-Construcción del contenedor:
+Tejido linfático (LYM)
 
-bash
-docker build -t colorectal-cancer-app .
+Tejido sano (NORM)
 
-Ejecución del contenedor:
+Músculo (MUS)
 
-bash
-docker run -it --rm --gpus all -v $(pwd):/app colorectal-cancer-app
+Tejido adiposo (ADIP)
 
+Tejido necrótico (NEC)
+
+Debris (DEB)
+
+Mucosa (MUC)
+
+Resultados
+Métrica	Valor (%)
+Accuracy	98.7
+Precision	97.2
+Recall	96.8
+F1-Score	97.0
+AUC-ROC	99.1
+
+
+MIT License © 2025 - Albarrán Jara, Montenegro Baca, Rodriguez Preciado
